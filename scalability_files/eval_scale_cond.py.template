@@ -4,5 +4,5 @@ def f():
     for i in range({{size}}):
         sum_ = sum_ + male_21_30_1
 
-    condition("{{size}}", 1)
-    return sum_
+    condition("sum_", 1)
+    return male_21_30_1
