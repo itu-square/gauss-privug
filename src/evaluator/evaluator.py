@@ -445,6 +445,7 @@ def evaluate_loop(stmt: Statement, num_iterations:int):
     
     for i in range(num_iterations):
         new_name = str(index)
+        #new_name = str(i)
         updated_variable_var += variable_to_unroll_var
         #print(updated_variable_var)
         variable_mean += variable_to_unroll_mean
@@ -456,7 +457,7 @@ def evaluate_loop(stmt: Statement, num_iterations:int):
         index_to_name[index] = new_name
         index+=1
     
-    print(index)
+    #print(index)
     
     #print(name_to_index)
     multivariant_joint_distribution.mean_vector[variable] = variable_mean
@@ -473,7 +474,7 @@ def evaluate_loop(stmt: Statement, num_iterations:int):
     
     index_to_name.update({index-1: variable})
     index_to_name.update({variable_index: str(index-1)})
-    index+=1
+    
     #print(name_to_index)
     if(print_state):
         print("finsished loop evaluation !!!!!")
@@ -550,6 +551,7 @@ def evaluate(program: List[Statement]) -> distribution:
             #print(multivariant_joint_distribution.covariance_matrix)
             
             #index+=1
+            #print(index)
             multivariant_joint_distribution.to_np(name_to_index, index)
             
             #multivariant_joint_distribution.construct_information_form()

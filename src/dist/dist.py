@@ -112,14 +112,16 @@ class MultivariateDist():
         """
         #print(name_to_index)
         #print("inside the condition function")
+        #print(max_index)
+        #print(name_to_index)
         if(print_state):
             print("inside the conditioning function")
         #print(self.covariance_matrix)
         mean_vector, covariance_matrix = self.to_temp_np(name_to_index, max_index)
-
+ 
         #print(name_to_index)
         #print(max_index-1)
-
+        
         #print(name)
         #print("inside condition function")
         #print(mean_vector)
@@ -226,6 +228,8 @@ class MultivariateDist():
 
         #Change to return entire multivariate dist
         #TODO in the future we should return the sub-vector specified in the return stmt.
+        #print(self.mean_vector_np)
+        #print(self.covariance_matrix_np)
         return (self.mean_vector_np, self.covariance_matrix_np)
     
 
@@ -264,7 +268,8 @@ class MultivariateDist():
         """
         #print("inside the to np function") 
         #print(self.covariance_matrix)
-        
+        #print(max_index)
+        #print(name_to_index)
         self.mean_vector_np = np.zeros(max_index) 
         self.covariance_matrix_np = np.zeros((max_index, max_index)) 
         for name in name_to_index.keys():
