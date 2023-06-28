@@ -9,12 +9,9 @@ SYNTH1_TEMPLATE_PSI     = './scalability_files/eval_psi_scale.psi.template'
 SYNTH2_TEMPLATE_GAUSS   = './scalability_files/eval_scale_cond.py.template'
 
 def time_gauss(size,template):
-    reload(exact_inference.parser)
-    reload(exact_inference.evaluator)
-    target_file = prepare_file(size,template)
+    target_file = prepare_file(size,template)    
     t_init = time.time()
-    program: List[exact_inference.Statement] = exact_inference.parse(target_file)
-    posterior_marginal: exact_inference.distribution = exact_inference.evaluate(program)
+    exact_inference.infer(target_file)    
     total_time = time.time() - t_init
     print(f'Privug exact | Size {size} | Time {total_time}')
     return total_time
@@ -22,7 +19,7 @@ def time_gauss(size,template):
 def time_psi(size,template):
     target_file = prepare_file(size,template)
     t_init = time.time()
-    call(['psi', target_file])  # TODO: redirect STDOUT
+    call(['psi', target_file])
     total_time = time.time() - t_init
     print(f'PSI | Size {size} | Time {total_time}')
     return total_time    
