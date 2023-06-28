@@ -1,0 +1,8 @@
+def main(){
+    a := array({{size}}, gauss(1,1));
+    sum := gauss(0,0);
+    for i in [0..{{size}}){
+    	sum = sum + a[i]
+    }
+    return sum;
+}

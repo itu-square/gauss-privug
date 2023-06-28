@@ -201,9 +201,9 @@ def parse(filepath):
     ast_tree   = ast.parse(open(filepath).read())
     parser     = Parser()
 
-    #print(ast.dump(ast_tree))
+    # print(ast.dump(ast_tree))
     result_ast = parser.visit(ast_tree)
-    #print(parser.program)
+    # print(parser.program)
     
     return parser.program
 

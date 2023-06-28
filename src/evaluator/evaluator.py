@@ -522,8 +522,9 @@ def condition_distribution(ident, expr):
 def evaluate(program: List[Statement]) -> distribution: 
     """ The eval main evaluation loop. Runs through each statement in the and updates the state
     :returns: Gaussian distribution
-    """
+    """     
     global index
+    
     for stmt in program:
         if(isinstance(stmt, For)):
             evaluate_loop(stmt.body, stmt.num.val)
@@ -558,7 +559,7 @@ def evaluate(program: List[Statement]) -> distribution:
             #print(multivariant_joint_distribution.potential_vector)
             #print(multivariant_joint_distribution.precision_matrix)
             
-            mean, variance = multivariant_joint_distribution.marginalize(name, name_to_index, index)
+            mean, variance = multivariant_joint_distribution.marginalize(name, name_to_index, index)            
             return distribution((mean, variance))
         else:
             raise TypeError("unknown statement")
