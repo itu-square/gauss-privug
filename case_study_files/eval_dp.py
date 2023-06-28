@@ -3,7 +3,6 @@
 
 def f():
 
-    #Male 21 - 30
     male_21_30_1 = Normal(mu=480_000, std=100)
     male_21_30_2 = Normal(mu=490_000, std=100)
     
@@ -36,8 +35,6 @@ def f():
     male_21_30_total = male_21_30_total / 10
     male_21_30_total = male_21_30_total + noise
   
-
-    #Update the condition to be the average 
-    #condition("male_21_30_total", 472_000)
+    condition("male_21_30_total", 472_000)
     
     return male_21_30_1
