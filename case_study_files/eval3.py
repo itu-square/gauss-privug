@@ -1,7 +1,6 @@
 
 def f():
 
-
     male_21_30_1 = Normal(mu=480_000, std=100)
     male_21_30_2 = Normal(mu=490_000, std=100)
     
@@ -27,9 +26,9 @@ def f():
     male_21_30_total = male_21_30_total + male_21_30_9
     male_21_30_total = male_21_30_total + male_21_30_10
     
-    male_21_30_total = male_21_30_total / 10
+    male_21_30_average = 0.1*male_21_30_total
 
-    condition("male_21_30_total", 472_000)
+    condition("male_21_30_average", 472_000)
 
     male_31_40_1 = Normal(mu=500_000, std=100)
     male_31_40_2 = Normal(mu=410_000, std=100)
@@ -56,10 +55,9 @@ def f():
     male_31_40_total = male_31_40_total + male_31_40_9
     male_31_40_total = male_31_40_total + male_31_40_10
 
-    male_31_40_total = male_31_40_total / 10
+    male_31_40_average = 0.1*male_31_40_total 
 
-    #Update the condition to be the average 
-    condition("male_31_40_total", 516_000)
+    condition("male_31_40_average", 516_000)
 
 
     male_41_50_1 = Normal(mu=580_000, std=100)
@@ -87,9 +85,9 @@ def f():
     male_41_50_total = male_41_50_total + male_41_50_9
     male_41_50_total = male_41_50_total + male_41_50_10
 
-    male_41_50_total = male_41_50_total / 10
+    male_41_50_average = 0.1*male_41_50_total
     
-    condition("male_41_50_total", 570_000)
+    condition("male_41_50_average", 570_000)
 
     male_51_60_1 = Normal(mu=680_000, std=100)
     male_51_60_2 = Normal(mu=570_000, std=100)
@@ -116,8 +114,8 @@ def f():
     male_51_60_total = male_51_60_total + male_51_60_9
     male_51_60_total = male_51_60_total + male_51_60_10
 
-    male_51_60_total = male_51_60_total / 10
-    condition("male_51_60_total", 678_000)
+    male_51_60_average = 0.1 * male_51_60_total 
+    condition("male_51_60_average", 678_000)
 
     female_21_30_1 = Normal(mu=450_000, std=100)
     female_21_30_2 = Normal(mu=400_000, std=100)
@@ -145,14 +143,11 @@ def f():
     female_21_30_total = female_21_30_total + female_21_30_9
     female_21_30_total = female_21_30_total + female_21_30_10
     
-    female_21_30_total = female_21_30_total / 10
+    female_21_30_average = 0.1*female_21_30_total
 
-    condition("female_21_30_total", 425_000)
+    condition("female_21_30_average", 425_000)
     
-    total_21_30   = Normal(mu=0, std=0)
-    
-    total_21_30 = total_21_30 + male_21_30_1
-    total_21_30 = total_21_30 + male_21_30_2
+    total_21_30 = male_21_30_1 + male_21_30_2
     total_21_30 = total_21_30 + male_21_30_3
     total_21_30 = total_21_30 + male_21_30_4
     total_21_30 = total_21_30 + male_21_30_5
@@ -174,13 +169,11 @@ def f():
     total_21_30 = total_21_30 + female_21_30_9
     total_21_30 = total_21_30 + female_21_30_10
     
-    total_21_30 = total_21_30 / 20
+    average_21_30 = 0.05*total_21_30 
     
-    condition("total_21_30", 448_500)
+    condition("average_21_30", 448_500)
     
-    total_male = Normal(mu=0, std=0)
-    total_male = total_male + male_21_30_1
-    total_male = total_male + male_21_30_2
+    total_male = male_21_30_1 + male_21_30_2
     total_male = total_male + male_21_30_3
     total_male = total_male + male_21_30_4
     total_male = total_male + male_21_30_5
@@ -224,9 +217,9 @@ def f():
     total_male = total_male + male_51_60_9
     total_male = total_male + male_51_60_10
     
-    total_male = total_male / 40
+    average_male = 0.025*total_male
 
-    condition("total_male", 559_000)
+    condition("average_male", 559_000)
     
     return male_21_30_1
 

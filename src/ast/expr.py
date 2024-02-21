@@ -68,9 +68,9 @@ class Dist(Expr):
     mean: float
     variance: float
 
-    def __init__(self, mean, variance):
+    def __init__(self, mean, std):
         self.mean     = mean
-        self.variance = variance
+        self.variance = std**2
     
     def to_string(self):
         return "Gauss("+str(self.mean)+ " " + str(self.variance)+")"

@@ -20,7 +20,6 @@ def f():
     
     noise = Normal(mu=0, std=1442533240)
 
-    
     male_21_30_total = male_21_30_1 + male_21_30_2
     male_21_30_total = male_21_30_total + male_21_30_3
     male_21_30_total = male_21_30_total + male_21_30_4
@@ -32,9 +31,9 @@ def f():
     male_21_30_total = male_21_30_total + male_21_30_10
         
     
-    male_21_30_total = male_21_30_total / 10
-    male_21_30_total = male_21_30_total + noise
+    male_21_30_average = 0.1*male_21_30_total 
+    male_21_30_average = male_21_30_average + noise
   
-    condition("male_21_30_total", 472_000)
+    condition("male_21_30_average", 472_000)
     
     return male_21_30_1

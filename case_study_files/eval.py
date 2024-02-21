@@ -27,8 +27,8 @@ def f():
     male_21_30_total = male_21_30_total + male_21_30_9
     male_21_30_total = male_21_30_total + male_21_30_10
     
-    male_21_30_total = male_21_30_total / 10
+    male_21_30_average = 0.1*male_21_30_total
     
-    condition("male_21_30_total", 472_000)
+    condition("male_21_30_average", 472_000)
     return male_21_30_1
 
